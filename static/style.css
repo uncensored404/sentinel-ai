@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0f1419;
+    color: #e7e9ea;
+    padding: 24px;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+h1 {
+    color: #1d9bf0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.author {
+    color: #8b98a5;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.time {
+    color: #8b98a5;
+    font-size: 14px;
+}
+
+.stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a2332;
+    padding: 18px 24px;
+    border-radius: 14px;
+    min-width: 130px;
+    text-align: center;
+    border: 1px solid #2f3336;
+}
+
+.card .num {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.critical { color: #f4212e; }
+.high { color: #ff7a00; }
+.medium { color: #ffd400; }
+.low { color: #00ba7c; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a2332;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #2f3336;
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #2f3336;
+}
+
+th {
+    background: #15202b;
+    color: #8b98a5;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge.critical { background: rgba(244, 33, 46, 0.15); color: #f4212e; }
+.badge.high { background: rgba(255, 122, 0, 0.15); color: #ff7a00; }
+.badge.medium { background: rgba(255, 212, 0, 0.15); color: #ffd400; }
+.badge.low { background: rgba(0, 186, 124, 0.15); color: #00ba7c; }
+
+.detail {
+    max-width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #8b98a5;
+    font-size: 13px;
+}
+
+.empty {
+    text-align: center;
+    color: #8b98a5;
+    padding: 40px;
+}

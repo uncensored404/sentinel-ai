@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SENTINEL AI — 404sec</title>
+    <meta http-equiv="refresh" content="12">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>🛡️ SENTINEL AI</h1>
+            <div class="author">by 404sec</div>
+        </div>
+        <div class="time">Dernière mise à jour : {{ now }}</div>
+    </div>
+
+    <div class="stats">
+        <div class="card">
+            <div class="num">{{ stats.total }}</div>
+            <div>Total alertes</div>
+        </div>
+        <div class="card">
+            <div class="num critical">{{ stats.by_severity.critical }}</div>
+            <div>Critiques</div>
+        </div>
+        <div class="card">
+            <div class="num high">{{ stats.by_severity.high }}</div>
+            <div>Hautes</div>
+        </div>
+        <div class="card">
+            <div class="num medium">{{ stats.by_severity.medium }}</div>
+            <div>Moyennes</div>
+        </div>
+        <div class="card">
+            <div class="num low">{{ stats.by_severity.low }}</div>
+            <div>Faibles</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Gravité</th>
+                <th>Titre</th>
+                <th>Détail</th>
+                <th>Heure</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in alerts %}
+            <tr>
+                <td><span class="badge {{ a.severity }}">{{ a.severity|upper }}</span></td>
+                <td>{{ a.title }}</td>
+                <td class="detail" title="{{ a.detail }}">{{ a.detail }}</td>
+                <td>{{ a.timestamp[11:19] }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4" class="empty">Aucune alerte pour le moment...</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
